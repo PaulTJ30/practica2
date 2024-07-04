@@ -1,0 +1,50 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "practica6_backend": {
+      "build": "npx azle practica6_backend",
+      "candid": "src/practica6_backend/practica6_backend.did",
+      "gzip": true,
+      "main": "src/practica6_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/practica6_backend/practica6_backend.wasm"
+    },
+    "practica6_frontend": {
+      "dependencies": [
+        "practica6_backend"
+      ],
+      "source": [
+        "src/practica6_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "practica6_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
